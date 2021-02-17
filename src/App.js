@@ -19,13 +19,16 @@ const App = () => {
     fetchData()
   }, [])
 
-  console.log(gridArr)
+  // console.log(gridArr)
+
+  const images = gridArr.map(({id, urls, description}) => {
+    return <img key={id} src={urls.small} alt={description} />
+  })
+
 
   return (
     <div className="App">
-      
-      <h3>Hello</h3>
-
+        {images}
     </div>
   );
 }
